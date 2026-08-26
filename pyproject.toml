@@ -6,18 +6,20 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "ipykernel>=7.3.0",
+    "ipython>=9.16.1",
     "langchain>=1.3.17",
     "langchain-community>=0.4.2",
     "langchain-core>=1.6.0",
     "langchain-google-genai>=4.3.5",
     "langchain-groq>=1.1.3",
     "langchain-openai>=1.6.0",
+    "langgraph>=1.2.11",
     "pydantic>=2.13.4",
     "python-dotenv>=1.2.3",
 ]
 
 [project.scripts]
-langchain-demo = "langchain:main"
+langchain-demo = "langchain_demo:main"
 
 [build-system]
 requires = ["uv_build>=0.12.5,<0.13.0"]

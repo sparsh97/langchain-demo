@@ -12,7 +12,6 @@ This is a personal learning/demo repo for LangChain and LangGraph basics. It is 
 - Install/sync dependencies: `uv sync`
 - Run a script: `uv run src/langchain_demo/langraphbasic.py` (or `langchaininto.py`)
 - `requirements.txt` also exists and lists a subset of the same deps (langchain, langchain-community, langchain-core, langchain-openai, langchain-google-genai, langchain-groq, python-dotenv) — `pyproject.toml`/`uv.lock` is the source of truth; keep `requirements.txt` in sync if it's still needed.
-- `langraphbasic.py` additionally requires `langgraph` and `ipython`, which are used in the script but not currently declared in `pyproject.toml` — add them via `uv add langgraph ipython` if running that script fails.
 - API keys (`GOOGLE_API_KEY`, `GROQ_API_KEY`) are stored in `.env` (gitignored) and loaded via `python-dotenv`. Never commit real key values.
 
 ## Code structure
@@ -20,4 +19,4 @@ This is a personal learning/demo repo for LangChain and LangGraph basics. It is 
 - `src/langchain_demo/langchaininto.py` — basic LangChain/pydantic intro snippet.
 - `src/langchain_demo/langraphbasic.py` — a minimal LangGraph example: builds a `StateGraph` with a shared `State` TypedDict, a start node, a conditional-routing node (`random_play`), and two terminal branch nodes (`cricket`, `football`), then compiles and invokes the graph. Useful as the reference pattern for any new LangGraph scripts in this repo (define `State`, define node functions that return partial state updates, wire nodes with `add_node`/`add_edge`/`add_conditional_edges`, `compile()`, `invoke()`).
 - `src/langchain_demo/langchainintro.ipynb` — notebook counterpart for interactive exploration of the same concepts.
-- `src/langchain_demo/__init__.py` — defines `main()`, the entry point referenced by the `langchain-demo` script in `pyproject.toml` (note: the script's target module reference currently says `langchain:main`, which does not match the actual package name `langchain_demo` — fix this mismatch if the console script needs to work).
+- `src/langchain_demo/__init__.py` — defines `main()`, the entry point referenced by the `langchain-demo` script in `pyproject.toml`.
