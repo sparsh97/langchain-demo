@@ -5,3 +5,5 @@ langchain-openai
 langchain-google-genai
 langchain-groq
 python-dotenv
+arxiv<4.0.0
+wikipedia
